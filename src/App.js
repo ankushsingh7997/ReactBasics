@@ -8,7 +8,7 @@ import React,{useState} from 'react'
 
 
 
-function EventHandler()
+function Assignment()
 {
   const[data,setData]=useState('')
 
@@ -19,7 +19,10 @@ function EventHandler()
   }
 
  return <div>
-  <input type={"text"} value={data} onChange={handleEvent}></input>
+  <div>
+  <textarea value={data} onChange={handleEvent}></textarea></div>
+  <button onClick={()=>{setData(data.toUpperCase())}}>change to upperCase</button>
+  <p>{data}</p>
  </div>
 }
 
@@ -33,7 +36,7 @@ function App()
   
   return <div className={app}>
     <div  >
-      <EventHandler/>
+      <Assignment/>
     </div>
   </div>
 }
