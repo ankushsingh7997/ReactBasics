@@ -1,23 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
-// // import Profile from './profile';
 
-// import Profile from './functionalComponent';
-// let app="App"
-// function App() {
-//   return (
-//     <div className={app}>
-      
-        
-//         <Profile text="Welcome" data={{name:" Ankush"}}/>
-        
-     
-      
-//     </div>
-//   );
-// }
-
-// export default App;
 import './App.css'
 import React,{useState} from 'react'
 
