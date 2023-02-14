@@ -5,11 +5,30 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// const CurrentTime=()=>
+// {
+//   return <div> 
+//     <h1>{+new Date()}</h1>
+//   </div>
+// }
+// setInterval(()=>{root.render(
+//   <React.StrictMode>
+//     {/* <App /> */}
+//     {/* <h1>hello this is me</h1> */}
+//     <CurrentTime/>
+    
+//   </React.StrictMode>
+// )},1000)
 root.render(
   <React.StrictMode>
     <App />
+    {/* <h1>hello this is me</h1> */}
+    
+    
   </React.StrictMode>
-);
+)
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

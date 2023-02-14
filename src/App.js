@@ -1,25 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+// // import Profile from './profile';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import Profile from './functionalComponent';
+// let app="App"
+// function App() {
+//   return (
+//     <div className={app}>
+      
+        
+//         <Profile text="Welcome" data={{name:" Ankush"}}/>
+        
+     
+      
+//     </div>
+//   );
+// }
+
+// export default App;
+import './App.css'
+import React,{useState} from 'react'
+
+// function base increase marks 
+
+function Markss()
+{
+const[marks,SetMarks]=useState(10)
+
+
+
+
+
+  return <div>
+     <p> my marks : {marks}</p>
+     <button onClick={()=>{SetMarks(marks+10)}}>increase marks</button>
+  </div>
 }
 
-export default App;
+// class base increase marks
+class Marks extends React.Component
+{
+  constructor(){
+    super()
+  this.state={marks:10}
+  }
+
+  render(){
+    return <div>
+      <p>marks is : {this.state.marks}</p>
+      <button onClick={()=>{this.setState({marks:this.state.marks+10
+      })}}>increase marks</button>
+    </div>
+  }
+
+}
+
+
+
+
+
+let app='App'
+function App()
+{
+  return <div className={app}>
+    <div  >
+    
+    <Marks/>
+    <Markss/>
+    </div>
+  </div>
+}
+
+export default App
+
