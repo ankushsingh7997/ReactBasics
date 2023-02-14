@@ -6,37 +6,7 @@ import React,{useState} from 'react'
 
 // function base increase marks 
 
-function Markss()
-{
-const[marks,SetMarks]=useState(10)
 
-
-
-
-
-  return <div>
-     <p> my marks : {marks}</p>
-     <button onClick={()=>{SetMarks(marks+10)}}>increase marks</button>
-  </div>
-}
-
-// class base increase marks
-class Marks extends React.Component
-{
-  constructor(){
-    super()
-  this.state={marks:10}
-  }
-
-  render(){
-    return <div>
-      <p>marks is : {this.state.marks}</p>
-      <button onClick={()=>{this.setState({marks:this.state.marks+10
-      })}}>increase marks</button>
-    </div>
-  }
-
-}
 
 
 
@@ -45,12 +15,32 @@ class Marks extends React.Component
 let app='App'
 function App()
 {
+  const[city,SetCity]=useState("")
+  function City()
+  {return <div>
+   my city is : {city}
+  </div>}
+
+  function Setcit(mycity)
+  {
+    SetCity(mycity)
+  }
   return <div className={app}>
     <div  >
     
-    <Marks/>
-    <Markss/>
+    
+    <City/>
+    <Changecity Setcit={Setcit}/>
     </div>
+  </div>
+}
+
+function Changecity(props)
+{
+  let mycity="srinagar"
+  return <div>
+  <button onClick={()=>{props.Setcit(mycity)}}> click here</button>
+ 
   </div>
 }
 
