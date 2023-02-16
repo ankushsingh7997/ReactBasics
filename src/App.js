@@ -5,14 +5,27 @@ import './App.css'
 import React,{useState} from 'react'
 
 
-function Counter()
+function Countclick()
 {
+  
    let [count,SetCount]=useState(0)
-
+   const[random,SetRandom]=useState(0)
+   function HandleFun()
+   {
+    SetRandom(Math.floor(Math.random()*10))
+    SetCount(count+1)
+    if(random==7) {alert(`number metches in ${count+1} clicks`)
+SetCount(0)
+   }
+   }
   return <div>
+    <div>
+    
+    </div>
     {count}
-    <button onClick={()=>{SetCount(count+1)}}>increment</button>
-    <button onClick={()=>{if(count>0)SetCount(count-1)}}>decrement</button>
+    <div>
+    <button onClick={HandleFun}>clickMe</button>
+    </div>
 
   </div>
 }
@@ -24,7 +37,7 @@ function App()
   
   return <div className={app}>
     <div  >
-    <Counter/>
+    <Countclick/>
     </div>
   </div>
 }
