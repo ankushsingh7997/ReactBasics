@@ -5,29 +5,17 @@ import './App.css'
 import React,{useState} from 'react'
 
 
-
-
-
-function Assignment()
+function Counter()
 {
-  const[data,setData]=useState('')
+   let [count,SetCount]=useState(0)
 
-  function handleEvent(e)
-  {
-     setData(e.target.value)
-    
-  }
+  return <div>
+    {count}
+    <button onClick={()=>{SetCount(count+1)}}>increment</button>
+    <button onClick={()=>{if(count>0)SetCount(count-1)}}>decrement</button>
 
- return <div>
-  <div>
-  <textarea value={data} onChange={handleEvent}></textarea></div>
-  <button onClick={()=>{setData(data.toUpperCase())}}>change to upperCase</button>
-  <p>{data}</p>
- </div>
+  </div>
 }
-
-
-
 
 
 let app='App'
@@ -36,7 +24,7 @@ function App()
   
   return <div className={app}>
     <div  >
-      <Assignment/>
+    <Counter/>
     </div>
   </div>
 }
