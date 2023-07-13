@@ -29,11 +29,6 @@ function App()
     }
   }
   console.log(file)
-    
-   
-    
-    
-
   }
 
   
