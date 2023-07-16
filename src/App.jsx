@@ -1,36 +1,21 @@
-import React,{useState, useEffect} from 'react'
+import React,{createContext} from 'react'
 import './App.css'
-
-
+import CompA from './CompA'
+const FirstName=createContext();
+const LastName=createContext();
 
 function App()
 {
-  const[timer,setTimer]=useState(0)
-  const handleTimer=()=>{
- 
-    
-  }
-  useEffect(()=>{
-    let interval=setInterval(()=>{
-      setTimer(timer+1)
-    },1000)
-  
-
-   return()=> clearInterval(interval)
-
-
-
-  })
-  
-  
   return( 
   <>
     <div className='main'>
-
-
-        <h1 style={{fontSize:"92px",fontWeight:999}}>{timer}</h1>
-
-        <button className='button-9' onClick={handleTimer}>start timer</button>
+  <FirstName.Provider value={'Ankush'}>
+    <LastName.Provider value={'Singh'}><CompA/></LastName.Provider>
+  
+  </FirstName.Provider>
+        
+       
+   
     
   
 
@@ -44,4 +29,5 @@ function App()
 
 
 export default App
+export {FirstName,LastName}
 
