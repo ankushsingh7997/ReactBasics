@@ -1,20 +1,20 @@
-import React,{createContext} from 'react'
+import React from 'react'
 import './App.css'
-import CompA from './CompA'
-const FirstName=createContext();
-const LastName=createContext();
+
+// to stop event bubbling we can use e.stopPropogation()
 
 function App()
 {
   return( 
   <>
     <div className='main'>
-  <FirstName.Provider value={'Ankush'}>
-    <LastName.Provider value={'Singh'}><CompA/></LastName.Provider>
   
-  </FirstName.Provider>
         
-       
+       <div onClick={(e)=>{console.log("this is div")}} style={{width:'10rem',border:'1px solid red'}}>
+        <button onClick={(e)=>{
+          e.stopPropagation()
+          console.log("this is button")}}>click me</button>
+       </div>
    
     
   
@@ -29,5 +29,5 @@ function App()
 
 
 export default App
-export {FirstName,LastName}
+
 
